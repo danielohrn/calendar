@@ -1,0 +1,136 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body, p, a {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;   
+}
+
+header {
+    width: 100%; 
+    min-height: 5vh;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    background: #2196F3; 
+    color: #fff; 
+}
+
+header a, header span {
+    margin: 0 20px;
+    color: #fff;  
+}
+
+.master-grid {
+    display: grid; 
+    grid-template-columns: 20% auto;
+    height: 95vh; 
+}
+
+.side-grid {
+    display: grid; 
+    grid-template-rows: 25% auto;  
+    border-right: 1px solid lightgray;
+    overflow: hidden; 
+}
+
+/* 
+Changes side grid to have one 100% row since 
+the 'add date' section is not visible for user */ 
+.side-grid.user {
+    grid-template-rows: 100%; 
+}
+
+.cal-grid {
+    display: grid; 
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr); 
+    grid-gap: 0px; 
+}
+
+.add-date-menu input {
+    display: block;
+    margin: 10px 0; 
+    width: 90%; 
+}
+
+.details {
+    border-top: 1px solid lightgray;
+    overflow: scroll; 
+}
+
+.details p {
+    margin: 5px 0; 
+}
+
+.details .date-container {
+    padding: 10px; 
+    border-bottom: 1px solid lightgray; 
+}
+
+.item {
+    border-bottom: 1px solid lightgray; 
+    border-right: 1px solid lightgray; 
+}
+
+.item.selected {
+    background: lightgray; 
+}
+
+.item, .add-date-menu {
+    padding: 10px 0 10px 10px; 
+}
+
+.weekday {
+    color: #c30130; 
+}
+
+.date {
+    display: inline-block;
+    font-size: 15px; 
+}
+
+@media (max-width: 740px) {
+    .master-grid {
+        grid-template-columns: 100%;
+        grid-template-rows: 40% auto; 
+    }
+    .cal-grid {
+        border-top: 1px solid lightgray; 
+    }
+    .side-grid {
+        grid-template-rows: 40px auto; 
+    }
+
+    .add-date-menu {
+        text-align: center; 
+    }
+
+    .add-date-menu form input {
+        display: inline-block;
+        margin: 0 10px; 
+        width: initial; 
+        vertical-align: middle; 
+    }
+
+    .details {
+        text-align: center; 
+    }
+
+    .details .date-container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .details .date-container p {
+        display: inline-block; 
+    }
+}
+
+/* For landscape mobile view */ 
+@media (max-height: 375px) {
+    .side-grid {
+        grid-template-rows: 45% auto; 
+    }
+}
